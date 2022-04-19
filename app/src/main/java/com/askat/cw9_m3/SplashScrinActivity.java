@@ -17,8 +17,8 @@ public class SplashScrinActivity extends Activity {
             @Override
             public void run() {
                 Intent mainIntent = new Intent(SplashScrinActivity.this, MainActivity.class);
-                SplashScrinActivity.this.startActivity(mainIntent);
-                SplashScrinActivity.this.finish();
+                startActivity(mainIntent);
+                finish();
             }
         }, SPLASH_DISPLAY_LENGTH);
     }

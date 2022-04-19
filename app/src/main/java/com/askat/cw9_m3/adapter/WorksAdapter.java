@@ -24,7 +24,7 @@ public class WorksAdapter extends RecyclerView.Adapter<WorksAdapter.WorksHolder>
     @NonNull
     @Override
     public WorksHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        binding = ItemWorksBinding.inflate(LayoutInflater.from(parent.getContext()));
+        binding = ItemWorksBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         return new WorksHolder(binding);
     }
 

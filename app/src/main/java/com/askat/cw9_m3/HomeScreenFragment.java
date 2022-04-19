@@ -52,7 +52,7 @@ public class HomeScreenFragment extends Fragment {
             public void onClick(View view) {
                 controller.navigate(R.id.finishFragment);
             }
-        });
+       });
 
     }
 
@@ -64,7 +64,7 @@ public class HomeScreenFragment extends Fragment {
         list.add(new JobListModel("Killer", "Apple", "Osh", "30k$/mo", "profi", "24/7", "Full time"));
 
         adapter = new JobListAdapter();
-        binding.JobList.setAdapter(adapter);
         adapter.setList(list);
+        binding.JobList.setAdapter(adapter);
     }
 }

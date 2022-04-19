@@ -45,7 +45,7 @@ public class LoginFragment extends Fragment {
 
     private void initViews() {
         binding.login.setOnClickListener(view -> {
-            if (binding.edtEmail.getText().toString().equals("GeekTech") && binding.edtPswrd.getText().toString().equals("GeekTech123")) {
+            if (binding.edtEmail.getText().toString().trim().equals("GeekTech") && binding.edtPswrd.getText().toString().equals("GeekTech123")) {
                 controller.navigate(R.id.homeScreenFragment);
             } else {
                 Toast.makeText(requireActivity(), "Неправильный пороль или Email", Toast.LENGTH_LONG).show();

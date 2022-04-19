@@ -1,7 +1,9 @@
 package com.askat.cw9_m3.adapter;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,7 +26,7 @@ public class JobListAdapter extends RecyclerView.Adapter<JobListAdapter.JoblistH
     @NonNull
     @Override
     public JoblistHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        binding = JoblistBinding.inflate(LayoutInflater.from(parent.getContext()));
+        binding = JoblistBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         return new JoblistHolder(binding);
     }
 
@@ -37,7 +39,12 @@ public class JobListAdapter extends RecyclerView.Adapter<JobListAdapter.JoblistH
         holder.binding.location.setText(models.get(position).getLocation());
         holder.binding.salary.setText(models.get(position).getSalary());
         holder.binding.time.setText(models.get(position).getTime());
-
+        holder.binding.getRoot().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(binding.getRoot().getContext(), "Item: " + holder.getAdapterPosition(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
@@ -46,7 +53,7 @@ public class JobListAdapter extends RecyclerView.Adapter<JobListAdapter.JoblistH
         return models.size();
     }
 
-    public class JoblistHolder extends RecyclerView.ViewHolder {
+    public static class JoblistHolder extends RecyclerView.ViewHolder {
         JoblistBinding binding;
         public JoblistHolder(@NonNull JoblistBinding binding) {
             super(binding.getRoot());

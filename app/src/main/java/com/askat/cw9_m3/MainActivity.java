@@ -1,15 +1,15 @@
 package com.askat.cw9_m3;
 
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
-
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
 
 import com.askat.cw9_m3.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationBarView;

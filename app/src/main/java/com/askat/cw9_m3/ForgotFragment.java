@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
@@ -29,7 +30,12 @@ public class ForgotFragment extends Fragment {
         binding.login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                controller.navigate(R.id.checkFragment);
+                if(binding.edtEmail.getText().toString().equals("")){
+                    Toast.makeText(requireActivity(), "Заполните поле", Toast.LENGTH_SHORT).show();
+                }else {
+                  controller.navigate(R.id.checkFragment);
+                }
+               /* controller.navigate(R.id.checkFragment);*/
             }
         });
         binding.with.setOnClickListener(new View.OnClickListener() {
